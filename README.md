@@ -1,2 +1,6 @@
-# newsroll
-### a Sails application
+=======
+newsroll
+========
+
+News sharing site using sailsjs
+
