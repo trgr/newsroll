@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=sails.config.site.title%></title>
+    
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href="/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles/newsroll.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="wrap">
+      <nav class="navbar navbar-inverse" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/"><%=sails.config.site.title%></a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav">
+	    <li><a href="/submit">submit story</a></li>
+	    <li><a href="/page/example">Example page</a></li> <!-- you can add custom pages here -->
+	    <% if(typeof user == "undefined") { %>
+	    <li><a href="/login">login / signup</a></li>
+	    <% }else{ %>
+	    <li><a href="/logout">logout</a></li>
+	    <% } %>
+	  </ul>
+	</div>
+      </nav>
+      <!-- Include the view file for the current controller/route -->
+      <%- body %>
+    </div>
+    <div id="footer">
+      <div class="container navbar-inverted">
+	<p>Newsroll <%=sails.config.newsroll.version%>, by <%=sails.config.newsroll.author%> <a href="<%=sails.config.newsroll.github%>">source</a>. 
+	  <% if(typeof sails.config.site.twitter != "undefined") { %>
+	  Follow on twitter <a href="https://twitter.com/<%=sails.config.site.twitter%>">@<%=sails.config.site.twitter%></a>
+	  <% } %>
+      </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-1 newsroll">
+    <% for(var i=0; Object.keys(news).length >i; i++){ %>
+    <h2><a  href="<%=news[i].url%>"><%=news[i].title%></a></h2> 
+    <p>posted:<%=news[i].createdAt%> | via <%=news[i].host%></p>
+    <% } %>
+  </div>
+</div>
