@@ -1,6 +1,8 @@
 =======
 newsroll
 ========
+News sharing site using sailsjs.
 
-News sharing site using sailsjs
+WIP
+
 
